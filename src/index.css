@@ -1,13 +1,109 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 400;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+	margin: 30px auto;
+	width: 600px;
+	padding: 50px;
+	background-color: wheat;
+	text-align: center;
+}
+h1 {
+	letter-spacing: 1px;
+	margin: 0;
+	padding-bottom: 1rem;
+}
+.add-todos {
+	display: inline-block;
+	margin-bottom: 1rem;
+	width: 100%;
+}
+#todo-input {
+	border: 1px solid #dedede;
+	border-radius: 2px;
+	display: block;
+	font-size: 16px;
+	padding: 10px;
+	width: 100%;
+	margin-right: 10px;
+	border-width: 1px;
+}
+
+#todo-input:focus {
+	outline: 0;
+}
+
+.add-todo {
+	cursor: pointer;
+	background-color: #1ac298;
+	box-shadow: var(--box-shadow);
+	color: #fff;
+	border: 0;
+	display: block;
+	font-size: 16px;
+	margin: 10px 0 30px;
+	padding: 10px;
+	width: 100%;
+}
+
+.todo-title {
+	display: flex;
+	align-self: center;
+}
+.todo-title input {
+	margin: 10px;
+}
+
+.todo-title .completed {
+	text-decoration: line-through;
+}
+.todo-title .nill {
+	text-decoration: none;
+}
+
+.todo-list {
+	list-style-type: none;
+	padding: 0;
+	margin-bottom: 40px;
+}
+
+.todo-list li {
+	background-color: #fff;
+	box-shadow: var(--box-shadow);
+	color: #333;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	padding: 10px;
+	margin: 10px 0;
+}
+
+.delete-btn {
+	cursor: pointer;
+	background-color: #e74c3c;
+	border: 0;
+	color: #fff;
+	font-size: 20px;
+	line-height: 20px;
+	padding: 2px 5px;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translate(100%, -50%);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.add-todo:focus,
+.delete-btn:focus {
+	outline: 0;
+}
+
+.todo-list li:hover .delete-btn {
+	opacity: 1;
 }
